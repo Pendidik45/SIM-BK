@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIP-BK — Sistem Informasi Guru Bimbingan Konseling</title>
+
+  <script src='https://cdn.tailwindcss.com'></script>
+  <script src='https://unpkg.com/react@18/umd/react.production.min.js'></script>
+  <script src='https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'></script>
+  <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js'></script>
+
+  <style>
+    html, body { margin:0; padding:0; overflow-x:hidden; }
+    #root, #root * { box-sizing: border-box; }
+
+    #preloader { position:fixed; inset:0; background:#0f172a; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999; transition:opacity .5s; }
+    #preloader.hide { opacity:0; pointer-events:none; }
+    .pl-spinner { width:70px; height:70px; border:6px solid rgba(59,130,246,.2); border-top-color:#3b82f6; border-radius:50%; animation:sipbk-spin 1s linear infinite; }
+    @keyframes sipbk-spin { to { transform: rotate(360deg); } }
+    .pl-title { color:#fff; font-family:system-ui,sans-serif; font-weight:700; letter-spacing:.1em; margin-top:24px; }
+    .pl-bar { width:220px; height:4px; background:rgba(255,255,255,.1); border-radius:9px; margin-top:18px; overflow:hidden; }
+    .pl-bar-fill { height:100%; background:#3b82f6; width:0%; animation:sipbk-load 2s ease-in-out forwards; }
+    @keyframes sipbk-load { to { width: 100%; } }
+
+    .sipbk-toast { position:fixed; top:16px; right:16px; z-index:10000; padding:12px 20px; border-radius:10px; font-family:system-ui,sans-serif; font-size:14px; color:#fff; box-shadow:0 10px 25px rgba(0,0,0,.25); animation:sipbk-slidein .3s ease; }
+    @keyframes sipbk-slidein { from { transform: translateX(120%); } to { transform: translateX(0); } }
+    .sipbk-toast.ok  { background:#10b981; }
+    .sipbk-toast.err { background:#ef4444; }
+  </style>
+</head>
+<body>
+  <div id='preloader'>
+    <div class='pl-spinner'></div>
+    <div class='pl-title'>SIP-BK</div>
+    <div class='pl-bar'><div class='pl-bar-fill'></div></div>
+  </div>
+  <div id='root'></div>
+
+  <script type='text/babel'>
+  // === SAMA PERSIS dengan isi <script> di file XML di atas ===
+  // Mulai dari: const API_URL = 'URL_WEB_APP_ANDA_DISINI';
+  // Sampai:     ReactDOM.createRoot(rootEl).render(<App />);
+  // PASTE SELURUHNYA DI SINI (tanpa <![CDATA[ ]]>)
